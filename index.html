@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>H&amp;H Takeaway — Eaton Green Road, Luton · 01582 703333</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="H&amp;H Takeaway &amp; Cafe, 12 Eaton Green Road, Luton LU2 9HB. Neighbourhood cafe and takeaway off Crawley Green Road. Call to order: 01582 703333.">
+<meta name="theme-color" content="#FFD500">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Albert+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ─── tokens ───────────────────────────────────────────── */
+:root{
+  --red:#E74C3C;
+  --red-deep:#B23123;
+  --blue:#4C7BE1;
+  --blue-deep:#2E4FA8;
+  --yellow:#FFD500;
+  --yellow-soft:#FFE869;
+  --paper:#FFFAF0;
+  --paper-warm:#F6EFDB;
+  --ink:#171311;
+  --rule:#1713111a;
+  --display:"Caprasimo","Cooper Black","Bookman Old Style",serif;
+  --body:"Albert Sans",system-ui,-apple-system,sans-serif;
+  --rhythm:clamp(1rem,.72rem + .55vw,1.18rem);
+  --gutter:clamp(1.25rem,4vw,3rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:var(--rhythm);line-height:1.5;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+/* paper grain so nothing is digital-flat */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;
+  background-image:
+    radial-gradient(rgba(23,19,17,.05) 1px,transparent 1.2px),
+    radial-gradient(rgba(23,19,17,.03) 1px,transparent 1px);
+  background-size:3px 3px,8px 8px;background-position:0 0,1px 2px;
+  mix-blend-mode:multiply;opacity:.7;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration-thickness:.08em;text-underline-offset:.18em}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;line-height:.92;text-wrap:balance;letter-spacing:-.005em}
+p{text-wrap:pretty;hyphens:auto;margin:0 0 1em}
+.wrap{width:min(1280px,100%);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ─── top bar ─────────────────────────────────────────── */
+.top{
+  position:sticky;top:0;z-index:50;background:var(--paper);
+  border-bottom:2px solid var(--ink);
+}
+.top__row{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding-block:.65rem;
+}
+.brand{
+  display:inline-flex;align-items:baseline;gap:.4rem;
+  font-family:var(--display);font-size:clamp(1.4rem,1.1rem + 1.2vw,1.8rem);
+  color:var(--red);letter-spacing:-.01em;
+}
+.brand small{
+  font-family:var(--body);font-weight:700;font-size:.7rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--blue-deep);
+  transform:translateY(-.1em);
+}
+.locline{
+  display:none;font-family:var(--body);font-weight:500;font-size:.86rem;
+  letter-spacing:.04em;color:var(--ink);
+}
+.locline b{color:var(--blue-deep);font-weight:700}
+.calltop{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--body);font-weight:800;text-decoration:none;
+  background:var(--ink);color:var(--yellow);
+  padding:.55rem .85rem;border-radius:0;
+  font-size:.92rem;letter-spacing:.02em;
+  border:2px solid var(--ink);
+  transition:background .15s,color .15s,transform .12s;
+}
+.calltop:hover{background:var(--red);color:var(--paper)}
+.calltop:active{transform:translateY(1px)}
+.calltop svg{flex:none}
+@media (min-width:780px){
+  .locline{display:inline}
+}
+
+/* ─── hero ────────────────────────────────────────────── */
+.hero{
+  background:var(--yellow);
+  border-bottom:2px solid var(--ink);
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  /* sun-ray fade in corner */
+  content:"";position:absolute;right:-12vw;top:-12vw;
+  width:38vw;height:38vw;border-radius:50%;
+  background:radial-gradient(circle,var(--yellow-soft) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero__grid{
+  display:grid;gap:1.5rem;
+  padding-block:clamp(2.2rem,4vw + 1rem,4.5rem);
+  grid-template-columns:1fr;
+  position:relative;z-index:1;
+}
+.hero__eyebrow{
+  font-family:var(--body);font-weight:800;font-size:.78rem;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--blue-deep);
+  display:inline-flex;align-items:center;gap:.6rem;
+}
+.hero__eyebrow::before{
+  content:"";display:inline-block;width:2.6rem;height:.18rem;background:var(--red);
+}
+.hero__title{
+  font-size:clamp(3.6rem,12vw + 1rem,9.5rem);
+  color:var(--red);
+  letter-spacing:-.02em;line-height:.86;
+  text-shadow:.18rem .18rem 0 var(--blue);
+}
+.hero__title .amp{
+  color:var(--blue);text-shadow:.18rem .18rem 0 var(--red);
+  font-style:italic;display:inline-block;transform:translateY(.04em);
+}
+.hero__sub{
+  font-family:var(--body);font-weight:500;font-size:clamp(1.08rem,.95rem + .5vw,1.35rem);
+  max-width:36ch;color:var(--ink);
+}
+.hero__sub b{color:var(--blue-deep);font-weight:800}
+.hero__cta{
+  display:inline-flex;align-items:baseline;gap:.7rem;
+  text-decoration:none;color:var(--paper);
+  background:var(--red);padding:1.05rem 1.4rem;
+  font-family:var(--display);font-size:clamp(1.4rem,1.1rem + 1.4vw,2.1rem);
+  letter-spacing:-.005em;
+  border:2px solid var(--ink);
+  box-shadow:.32rem .32rem 0 var(--ink);
+  transition:transform .12s,box-shadow .12s,background .15s;
+  width:max-content;
+}
+.hero__cta small{
+  font-family:var(--body);font-weight:700;font-size:.78rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--yellow);transform:translateY(-.1em);
+}
+.hero__cta:hover{
+  transform:translate(-.12rem,-.12rem);
+  box-shadow:.44rem .44rem 0 var(--ink);
+  background:var(--red-deep);
+}
+.hero__cta:active{
+  transform:translate(.16rem,.16rem);
+  box-shadow:.08rem .08rem 0 var(--ink);
+}
+.hero__meta{
+  font-family:var(--body);font-weight:600;font-size:.9rem;
+  color:var(--ink);letter-spacing:.02em;
+  display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:center;
+}
+.hero__meta span{display:inline-flex;align-items:center;gap:.4rem}
+.dot{width:.4rem;height:.4rem;background:var(--ink);display:inline-block;border-radius:50%}
+
+@media (min-width:880px){
+  .hero__grid{
+    grid-template-columns:1.4fr 1fr;
+    align-items:end;
+    gap:2rem 3rem;
+  }
+  .hero__eyebrow{grid-column:1/-1}
+  .hero__title{grid-column:1;grid-row:2}
+  .hero__sub{grid-column:2;grid-row:2;align-self:end;justify-self:start}
+  .hero__cta{grid-column:1;grid-row:3;align-self:start}
+  .hero__meta{grid-column:2;grid-row:3;align-self:center;justify-self:start}
+}
+
+/* ─── marquee ─────────────────────────────────────────── */
+.marquee{
+  background:var(--blue);color:var(--paper);
+  border-bottom:2px solid var(--ink);
+  overflow:hidden;
+  padding-block:.85rem;
+}
+.marquee__track{
+  display:inline-flex;gap:2.2rem;white-space:nowrap;
+  animation:scroll 38s linear infinite;
+  font-family:var(--display);font-size:clamp(1.4rem,1.1rem + 1.4vw,2.1rem);
+  letter-spacing:.02em;
+}
+.marquee__track span{display:inline-flex;align-items:center;gap:2.2rem}
+.marquee__track i{
+  display:inline-block;width:.7rem;height:.7rem;background:var(--yellow);
+  border-radius:50%;font-style:normal;
+}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .marquee__track{animation:none}
+}
+
+/* ─── about / what we are ─────────────────────────────── */
+.what{
+  padding-block:clamp(3rem,6vw,5.5rem);
+  background:var(--paper);
+}
+.what__grid{
+  display:grid;gap:2.2rem;
+  grid-template-columns:1fr;
+}
+.what__head h2{
+  font-size:clamp(2.4rem,5vw + 1rem,5rem);
+  color:var(--ink);
+}
+.what__head h2 em{
+  font-style:normal;color:var(--red);
+}
+.what__copy{font-size:clamp(1.04rem,.95rem + .35vw,1.22rem);max-width:46ch}
+.what__copy p{margin-bottom:1.1em}
+.what__list{
+  list-style:none;margin:0;padding:0;
+  display:grid;gap:.7rem;
+}
+.what__list li{
+  display:flex;align-items:baseline;gap:.7rem;
+  font-family:var(--body);font-weight:600;font-size:1.02rem;
+  border-bottom:1px dashed var(--rule);padding-bottom:.6rem;
+}
+.what__list li::before{
+  content:"●";color:var(--yellow);font-size:1.4rem;line-height:.6;
+  text-shadow:1px 1px 0 var(--ink);
+  flex:none;
+}
+.what__list li b{display:block;font-family:var(--display);font-weight:400;
+  font-size:1.3rem;color:var(--blue-deep);line-height:1;margin-bottom:.18rem}
+.what__list li small{
+  display:block;font-family:var(--body);font-weight:500;font-size:.86rem;
+  color:var(--ink);opacity:.75;
+}
+.what__list li > div{display:flex;flex-direction:column}
+@media (min-width:880px){
+  .what__grid{
+    grid-template-columns:1fr 1fr;
+    gap:3rem 4rem;align-items:start;
+  }
+  .what__head{grid-column:1;position:sticky;top:5rem}
+}
+
+/* ─── giant call slab ─────────────────────────────────── */
+.callslab{
+  background:var(--red);color:var(--paper);
+  border-block:2px solid var(--ink);
+  padding-block:clamp(2.5rem,5vw,4.5rem);
+  position:relative;overflow:hidden;
+}
+.callslab::before{
+  content:"";position:absolute;left:-4vw;bottom:-12vw;
+  width:36vw;height:36vw;border-radius:50%;
+  background:var(--red-deep);opacity:.6;
+  pointer-events:none;
+}
+.callslab__row{
+  display:grid;gap:1.8rem;position:relative;z-index:1;
+}
+.callslab__lead{
+  font-family:var(--display);font-size:clamp(2rem,4vw + 1rem,3.6rem);
+  color:var(--yellow);line-height:.95;
+}
+.callslab__lead em{
+  font-style:normal;color:var(--paper);
+  text-decoration:underline;text-decoration-thickness:.18rem;
+  text-decoration-color:var(--yellow);text-underline-offset:.2em;
+}
+.bigphone{
+  display:inline-flex;align-items:center;gap:1rem;
+  color:var(--paper);text-decoration:none;
+  font-family:var(--display);font-size:clamp(2.6rem,8vw + .5rem,6.2rem);
+  letter-spacing:-.01em;line-height:.92;
+  border-bottom:.32rem solid var(--yellow);
+  padding-bottom:.1em;
+  transition:color .15s;
+}
+.bigphone:hover{color:var(--yellow)}
+.bigphone svg{flex:none;width:1.1em;height:1.1em}
+.callslab__sub{
+  font-family:var(--body);font-weight:600;color:var(--paper);
+  font-size:1rem;letter-spacing:.02em;max-width:46ch;
+}
+@media (min-width:880px){
+  .callslab__row{grid-template-columns:1.1fr 1fr;align-items:end;gap:2rem 4rem}
+  .callslab__lead{grid-column:1}
+  .bigphone{grid-column:1/-1;grid-row:2}
+  .callslab__sub{grid-column:2;grid-row:1;align-self:end}
+}
+
+/* ─── find us ─────────────────────────────────────────── */
+.find{
+  padding-block:clamp(3rem,6vw,5.5rem);
+  background:var(--paper-warm);
+  border-bottom:2px solid var(--ink);
+}
+.find__grid{
+  display:grid;gap:2rem;
+  grid-template-columns:1fr;
+}
+.find__head h2{
+  font-size:clamp(2.4rem,5vw + 1rem,5rem);
+  color:var(--blue-deep);
+}
+.find__head h2 em{font-style:normal;color:var(--red)}
+.address{
+  font-family:var(--display);font-size:clamp(1.5rem,1.2rem + 1vw,2.2rem);
+  line-height:1.15;color:var(--ink);
+  margin-bottom:1.2rem;
+}
+.address span{display:block}
+.address .post{color:var(--blue-deep)}
+.directions{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--body);font-weight:800;font-size:.95rem;
+  letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none;
+  background:var(--yellow);
+  padding:.85rem 1.1rem;border:2px solid var(--ink);
+  box-shadow:.28rem .28rem 0 var(--ink);
+  transition:transform .12s,box-shadow .12s,background .15s;
+}
+.directions:hover{
+  transform:translate(-.1rem,-.1rem);
+  box-shadow:.4rem .4rem 0 var(--ink);
+  background:var(--yellow-soft);
+}
+.directions:active{
+  transform:translate(.14rem,.14rem);
+  box-shadow:.06rem .06rem 0 var(--ink);
+}
+.find__notes{
+  font-family:var(--body);font-size:1rem;color:var(--ink);
+}
+.find__notes ul{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+.find__notes li{display:flex;gap:.7rem;align-items:flex-start;border-bottom:1px solid var(--rule);padding-bottom:.55rem}
+.find__notes b{display:block;font-family:var(--display);font-weight:400;color:var(--red);font-size:1.1rem;line-height:1.1}
+.find__notes small{color:var(--ink);opacity:.8;font-size:.92rem}
+.find__notes li::before{
+  content:"→";color:var(--blue);font-weight:900;flex:none;
+  font-size:1.1rem;line-height:1;padding-top:.15rem;
+}
+.find__notes li > div{display:flex;flex-direction:column;gap:.18rem}
+@media (min-width:880px){
+  .find__grid{grid-template-columns:1.2fr 1fr;gap:3rem 4rem;align-items:start}
+}
+
+/* ─── ribbon ─────────────────────────────────────────── */
+.ribbon{
+  background:var(--yellow);
+  border-bottom:2px solid var(--ink);
+  padding-block:1.2rem;
+}
+.ribbon p{
+  margin:0;font-family:var(--display);font-size:clamp(1.4rem,1.1rem + 1.4vw,2.2rem);
+  color:var(--ink);text-align:center;
+}
+.ribbon p em{font-style:normal;color:var(--red);
+  text-decoration:underline;text-decoration-thickness:.16rem;text-underline-offset:.16em}
+
+/* ─── footer ─────────────────────────────────────────── */
+.foot{
+  background:var(--ink);color:var(--paper-warm);
+  padding-block:2.2rem 1.6rem;
+}
+.foot__grid{
+  display:grid;gap:1.4rem;
+  grid-template-columns:1fr;
+  align-items:start;
+}
+.foot__brand{
+  font-family:var(--display);font-size:2rem;color:var(--yellow);letter-spacing:-.01em;
+}
+.foot__brand small{
+  display:block;font-family:var(--body);font-weight:700;font-size:.72rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--paper-warm);
+  margin-top:.3rem;opacity:.8;
+}
+.foot__cols{
+  display:grid;gap:1.4rem;grid-template-columns:1fr;
+  font-family:var(--body);font-size:.94rem;color:var(--paper-warm);
+}
+.foot__cols h4{
+  font-family:var(--body);font-weight:800;font-size:.74rem;
+  letter-spacing:.26em;text-transform:uppercase;
+  color:var(--yellow);margin:0 0 .55rem;
+}
+.foot__cols p{margin:0;line-height:1.55;opacity:.92}
+.foot__cols a{color:var(--paper-warm);text-decoration:none;border-bottom:1px dotted #ffffff55}
+.foot__cols a:hover{color:var(--yellow);border-bottom-color:var(--yellow)}
+.foot__fine{
+  margin-top:1.6rem;padding-top:1.1rem;border-top:1px solid #ffffff22;
+  font-family:var(--body);font-size:.78rem;letter-spacing:.04em;
+  color:#ffffff99;display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:space-between;
+}
+@media (min-width:780px){
+  .foot__grid{grid-template-columns:1fr 2fr;gap:2.4rem}
+  .foot__cols{grid-template-columns:repeat(3,1fr);gap:2rem}
+}
+
+/* ─── reveal ─────────────────────────────────────────── */
+@supports (animation-timeline:view()){
+  .reveal{
+    animation:rise both;
+    animation-timeline:view();
+    animation-range:entry 0% cover 28%;
+  }
+  @keyframes rise{
+    from{opacity:0;transform:translateY(1.6rem)}
+    to{opacity:1;transform:translateY(0)}
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{animation:none}
+}
+
+/* ─── focus ──────────────────────────────────────────── */
+a:focus-visible,button:focus-visible{
+  outline:3px solid var(--blue);outline-offset:3px;
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__row">
+    <a class="brand" href="#" aria-label="H&amp;H Takeaway home">
+      H&amp;H<small>cafe · takeaway</small>
+    </a>
+    <span class="locline">12 Eaton Green Road · <b>LU2 9HB</b></span>
+    <a class="calltop" href="tel:+441582703333" aria-label="Call H and H Takeaway">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.97.37 1.92.7 2.84a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.87.58 2.84.7A2 2 0 0 1 22 16.92Z"/></svg>
+      01582 703333
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__eyebrow">A Luton corner-cafe since the day</div>
+    <h1 class="hero__title">H<span class="amp">&amp;</span>H<br>Cafe.</h1>
+    <p class="hero__sub">
+      Sit-in or takeaway, just off Crawley Green Road. Quick service,
+      proper portions, the kind of place where the regulars get a nod
+      before they get a menu. <b>Order by phone</b> and we'll have it ready when you arrive.
+    </p>
+    <a class="hero__cta" href="tel:+441582703333">
+      <small>Call to order</small> 01582&nbsp;703333
+    </a>
+    <div class="hero__meta">
+      <span>Eaton Green Road</span><i class="dot"></i>
+      <span>LU2 9HB</span><i class="dot"></i>
+      <span>Luton</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>CAFE <i></i> TAKEAWAY <i></i> EATON GREEN ROAD <i></i> LU2 9HB <i></i> CALL TO ORDER <i></i> 01582&nbsp;703333 <i></i></span>
+    <span>CAFE <i></i> TAKEAWAY <i></i> EATON GREEN ROAD <i></i> LU2 9HB <i></i> CALL TO ORDER <i></i> 01582&nbsp;703333 <i></i></span>
+  </div>
+</div>
+
+<section class="what">
+  <div class="wrap what__grid">
+    <div class="what__head reveal">
+      <h2>A neighbourhood<br>cafe that <em>also</em><br>does the run.</h2>
+    </div>
+    <div class="reveal">
+      <div class="what__copy">
+        <p>
+          H&amp;H sits on the corner of Eaton Green Road, the short walk between
+          the LU2 estates and the retail park. It's a cafe in the unfussy sense:
+          breakfast first, lunch quick, and a takeaway counter for the people
+          on their way somewhere else.
+        </p>
+        <p>
+          The menu changes with what's in. Phone ahead if you want it ready,
+          or walk in and find a seat — both work.
+        </p>
+      </div>
+      <ul class="what__list">
+        <li>
+          <div>
+            <b>Sit-in</b>
+            <small>Cafe seating inside — quiet between the rushes.</small>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>Takeaway</b>
+            <small>Order at the counter or by phone for collection.</small>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>On the corner</b>
+            <small>12 Eaton Green Road — five minutes from Crawley Green.</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="callslab" id="call">
+  <div class="wrap callslab__row reveal">
+    <p class="callslab__lead">
+      Quickest way<br>to order is to <em>pick up<br>the phone</em>.
+    </p>
+    <a class="bigphone" href="tel:+441582703333" aria-label="Call 01582 703333">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.97.37 1.92.7 2.84a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.87.58 2.84.7A2 2 0 0 1 22 16.92Z"/></svg>
+      01582&nbsp;703333
+    </a>
+    <p class="callslab__sub">
+      Tap the number on a mobile and it'll dial straight through.
+      Walk-ins welcome too — we'll do our best to keep the wait short.
+    </p>
+  </div>
+</section>
+
+<section class="find">
+  <div class="wrap find__grid">
+    <div class="find__head reveal">
+      <h2>Find <em>us</em>.</h2>
+      <p class="address">
+        <span>H&amp;H Cafe / Takeaway</span>
+        <span>12 Eaton Green Road</span>
+        <span>Luton</span>
+        <span class="post">LU2 9HB</span>
+      </p>
+      <a class="directions" href="https://www.google.com/maps/dir/?api=1&destination=12+Eaton+Green+Road+Luton+LU2+9HB" target="_blank" rel="noopener">
+        Get directions →
+      </a>
+    </div>
+    <div class="find__notes reveal">
+      <ul>
+        <li>
+          <div>
+            <b>On the corner.</b>
+            <small>Eaton Green Road runs east off Crawley Green Road. We're on the parade.</small>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>Street parking.</b>
+            <small>Usually space on Eaton Green Road and the side streets — be polite to the residents.</small>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>Walk-in or call.</b>
+            <small>Phone ahead for takeaway if you're in a hurry.</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon">
+  <p>Ring the bell, take a seat — <em>or call ahead</em>.</p>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      H&amp;H<small>cafe · takeaway · luton</small>
+    </div>
+    <div class="foot__cols">
+      <div>
+        <h4>Find us</h4>
+        <p>12 Eaton Green Road<br>Luton<br>LU2 9HB</p>
+      </div>
+      <div>
+        <h4>Call</h4>
+        <p><a href="tel:+441582703333">01582 703333</a></p>
+      </div>
+      <div>
+        <h4>Order</h4>
+        <p>Phone for collection. Sit-in welcome — counter service inside.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot__fine">
+    <span>© H&amp;H Cafe, Luton.</span>
+    <span>Eaton Green Road · LU2 9HB</span>
+  </div>
+</footer>
+
+</body>
+</html>
